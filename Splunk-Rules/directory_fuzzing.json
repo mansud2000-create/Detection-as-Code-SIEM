@@ -1,0 +1,13 @@
+{
+    "name": "SOC Alert: Directory Fuzzing (Gizli Qovluq Axtarisi)",
+    "search": "index=\"web_production\" status=404 | stats count by clientip | where count > 30 | table clientip, count",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": 1,
+    "dispatch.earliest_time": "-5m@m",
+    "dispatch.latest_time": "now",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": 0,
+    "action.webhook": 1,
+    "action.webhook.param.url": "https://api.telegram.org/bot8694404265:AAFxe3BMRT7onoFZP8z2X9kXTaLYU9xFsxs/sendMessage?chat_id=5222030546&text=WARNING:+Eyni+IP-den+coxsayli+404+xetasi!(Directory+Fuzzing+skanlamasi)"
+}
