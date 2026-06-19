@@ -1,0 +1,13 @@
+{
+    "name": "SOC Alert: Zererli/Avtomatlasdirilmis User-Agent Izlenmesi",
+    "search": "index=\"web_production\" (\"*curl/*\" OR \"*Wget/*\" OR \"*python-requests*\" OR \"*Go-http-client*\") | table _time, _raw",
+    "cron_schedule": "*/5 * * * *",
+    "is_scheduled": 1,
+    "dispatch.earliest_time": "-5m@m",
+    "dispatch.latest_time": "now",
+    "alert_type": "number of events",
+    "alert_comparator": "greater than",
+    "alert_threshold": 0,
+    "action.webhook": 1,
+    "action.webhook.param.url": "https://api.telegram.org/bot8694404265:AAFxe3BMRT7onoFZP8z2X9kXTaLYU9xFsxs/sendMessage?chat_id=5222030546&text=WARNING:+Saytda+skript/CLI+aletleri+(Python/Curl/Wget)+ile+sorgu+qeyde+alindi!"
+}
