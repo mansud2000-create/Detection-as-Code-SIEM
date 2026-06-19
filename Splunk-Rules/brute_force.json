@@ -1,6 +1,6 @@
 {
     "name": "SOC Alert: Brute Force Hucum Cehdi",
-    "search": "index=\"web_production\" (status=401 OR \"*login failed*\" OR \"*incorrect*\" OR \"*failed password*\") | stats count by clientip | where count > 50",
+    "search": "index=\"web_production\" (status=401 OR \"*login failed*\" OR \"*incorrect*\" OR \"*failed password*\") | stats count by clientip | where count > 30",
     "cron_schedule": "*/10 * * * *",
     "is_scheduled": 1,
     "dispatch.earliest_time": "-10m@m",
